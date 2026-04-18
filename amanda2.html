@@ -5,283 +5,308 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amanda Trans Group</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-body {
-    background: #f4f7fb;
-    scroll-behavior: smooth;
+body{
+    background:#f9fbfd;
+    color:#222;
+    scroll-behavior:smooth;
 }
 
 /* NAVBAR */
-nav {
-    position: fixed;
-    width: 100%;
-    background: rgba(13,71,161,0.9);
-    backdrop-filter: blur(10px);
-    padding: 15px;
-    text-align: center;
-    z-index: 1000;
+nav{
+    position:fixed;
+    width:100%;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    transition:0.3s;
 }
 
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
+nav.scrolled{
+    background:#0a2540;
+}
+
+nav h1{
+    color:white;
 }
 
 /* HERO */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(10,37,64,0.7),rgba(10,37,64,0.9)),
+    url('https://source.unsplash.com/1600x900/?travel,bus');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
 }
 
-.hero h1 {
-    font-size: 50px;
+.hero h2{
+    font-size:36px;
 }
 
-.hero p {
-    margin-top: 10px;
-    font-size: 18px;
+.hero p{
+    margin:10px 0;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#25d366;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    margin-top:15px;
 }
 
 /* SECTION */
-section {
-    padding: 80px 20px;
-    text-align: center;
+section{
+    padding:70px 20px;
 }
 
-h2 {
-    margin-bottom: 30px;
-    color: #0d47a1;
+.container{
+    max-width:1100px;
+    margin:auto;
 }
 
-/* CARD */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-.card {
-    width: 280px;
-    border-radius: 15px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: 0.4s;
+/* CARD PREMIUM */
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.4s;
 }
 
-.card:hover {
-    transform: translateY(-10px);
+.card:hover{
+    transform:translateY(-8px);
 }
 
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
 }
 
-.card h3 {
-    margin: 10px;
+.card-content{
+    padding:15px;
 }
 
-.card p {
-    padding: 0 10px 15px;
-    font-size: 14px;
+.card-content h3{
+    margin-bottom:8px;
 }
 
-/* VISI */
-.visi p {
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 15px;
+/* FLOAT WA */
+.wa-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25d366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* WHATSAPP */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 14px 18px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
+/* MAP */
+iframe{
+    border-radius:15px;
 }
 
-/* ANIMATION */
-.fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
+/* ANIMASI */
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
 }
 
-.show {
-    opacity: 1;
-    transform: translateY(0);
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+footer{
+    background:#0a2540;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-<a href="#home">Home</a>
-<a href="#armada">Armada</a>
-<a href="#wisata">Wisata</a>
-<a href="#visi">Visi</a>
-<a href="#lokasi">Lokasi</a>
+<nav id="navbar">
+<h1>Amanda Trans</h1>
 </nav>
 
-<!-- HERO -->
-<div class="hero" id="home">
+<div class="hero">
 <div>
-<h1>Amanda Trans Group</h1>
-<p>Transportasi & Wisata Nyaman, Aman, Terpercaya</p>
+<h2>Travel & Wisata Madiun</h2>
+<p>Nyaman • Aman • Profesional</p>
+<a href="https://wa.me/6289662873796" class="btn">Booking Sekarang</a>
 </div>
 </div>
 
 <!-- ARMADA -->
-<section id="armada">
-<h2>Katalog Armada</h2>
-<div class="container">
+<section class="container fade">
+<h2>Armada Premium</h2>
+<div class="grid">
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Toyota_Avanza.jpg">
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?avanza">
+<div class="card-content">
 <h3>Avanza</h3>
-<p>Mobil keluarga nyaman untuk perjalanan kecil.</p>
+<p>Mobil keluarga hemat & nyaman.</p>
+</div>
 </div>
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Innova_Reborn.jpg">
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?innova">
+<div class="card-content">
 <h3>Innova Reborn</h3>
-<p>Kenyamanan premium untuk perjalanan jauh.</p>
+<p>Elegan untuk perjalanan jauh.</p>
+</div>
 </div>
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Hiace_Commuter.jpg">
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?hiace">
+<div class="card-content">
 <h3>Hiace Commuter</h3>
-<p>Kapasitas besar cocok untuk rombongan.</p>
+<p>Kapasitas besar untuk rombongan.</p>
+</div>
 </div>
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Hiace_Premio.jpg">
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?luxury,van">
+<div class="card-content">
 <h3>Hiace Premio</h3>
-<p>Lebih mewah dan eksklusif.</p>
+<p>Interior premium & nyaman.</p>
+</div>
 </div>
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Isuzu_Elf.jpg">
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?minibus">
+<div class="card-content">
 <h3>Elf</h3>
-<p>Efisien untuk wisata kelompok kecil.</p>
+<p>Cocok untuk grup sedang.</p>
+</div>
 </div>
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Bus.jpg">
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?big,bus">
+<div class="card-content">
 <h3>Big Bus</h3>
-<p>Untuk rombongan besar & wisata jauh.</p>
+<p>Untuk wisata skala besar.</p>
+</div>
 </div>
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Medium_bus.jpg">
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?tour,bus">
+<div class="card-content">
 <h3>Medium Bus</h3>
-<p>Kapasitas sedang, nyaman & fleksibel.</p>
+<p>Solusi ekonomis rombongan.</p>
+</div>
 </div>
 
 </div>
 </section>
 
 <!-- WISATA -->
-<section id="wisata">
-<h2>Pilihan Wisata</h2>
-<div class="container">
+<section class="container fade">
+<h2>Destinasi Favorit Jawa</h2>
+<div class="grid">
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Bromo-Semeru.jpg">
-<h3>Bromo</h3>
-<p>Gunung ikonik dengan sunrise terbaik di Indonesia.</p>
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?bromo">
+<div class="card-content">
+<h3>Gunung Bromo</h3>
+<p>Sunrise terbaik di Indonesia.</p>
+</div>
 </div>
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Jatim_Park.jpg">
-<h3>Jatim Park</h3>
-<p>Wisata edukasi dan hiburan keluarga di Batu.</p>
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?pacitan,beach">
+<div class="card-content">
+<h3>Pantai Pacitan</h3>
+<p>Pantai indah dengan ombak eksotis.</p>
+</div>
 </div>
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Borobudur.jpg">
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?borobudur">
+<div class="card-content">
 <h3>Borobudur</h3>
-<p>Candi Buddha terbesar di dunia (Jawa Tengah).</p>
+<p>Candi terbesar di dunia.</p>
+</div>
 </div>
 
-<div class="card fade">
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Dieng.jpg">
-<h3>Dieng</h3>
-<p>Wisata dataran tinggi dengan udara sejuk.</p>
+<div class="card">
+<img src="https://source.unsplash.com/400x300/?waterfall">
+<div class="card-content">
+<h3>Tumpak Sewu</h3>
+<p>Air terjun megah & viral.</p>
+</div>
 </div>
 
 </div>
 </section>
 
 <!-- VISI MISI -->
-<section id="visi" class="visi">
+<section class="container fade">
 <h2>Visi & Misi</h2>
-
-<p><b>Visi:</b> Menjadi jasa transportasi wisata terbaik, aman dan terpercaya di Indonesia.</p>
-
-<p><b>Misi:</b></p>
-<p>- Memberikan pelayanan profesional</p>
-<p>- Menyediakan armada berkualitas</p>
-<p>- Mengutamakan keselamatan pelanggan</p>
-<p>- Harga kompetitif dan transparan</p>
-
+<p><b>Visi:</b> Menjadi travel terpercaya di Madiun.</p>
+<p><b>Misi:</b> Pelayanan terbaik, armada nyaman, harga bersaing.</p>
 </section>
 
 <!-- MAP -->
-<section id="lokasi">
-<h2>Lokasi Kami - Madiun</h2>
-<iframe src="https://maps.google.com/maps?q=madiun&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="300" style="border:0;"></iframe>
+<section class="container fade">
+<h2>Lokasi Kami</h2>
+<iframe src="https://maps.google.com/maps?q=Madiun&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300"></iframe>
 </section>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" 
-href="https://wa.me/6281234567890?text=Halo%20Amanda%20Trans%20Group%2C%20saya%20ingin%20booking%20kendaraan"
-target="_blank">
-Chat WhatsApp
-</a>
+<footer>
+<p>© 2026 Amanda Trans Group</p>
+</footer>
 
-<!-- JS ANIMASI -->
+<a href="https://wa.me/6289662873796" class="wa-float">💬</a>
+
 <script>
-const elements = document.querySelectorAll('.fade');
+// navbar scroll
+window.addEventListener('scroll',()=>{
+    const nav = document.getElementById('navbar');
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+});
 
-window.addEventListener('scroll', () => {
-    elements.forEach(el => {
-        const pos = el.getBoundingClientRect().top;
-        const screen = window.innerHeight;
-
-        if(pos < screen - 100){
+// animasi scroll
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll', ()=>{
+    faders.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
             el.classList.add('show');
         }
     });
